@@ -43,7 +43,7 @@ if($mode == "all") {
 					if($width != 0) {
 							print(" width=\"$width\"");
 					}
-					print("/>\n");
+					print("/></a>\n");
 					$i++;
 					$cur++;
 			} else {
