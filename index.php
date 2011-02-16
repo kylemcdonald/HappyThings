@@ -36,6 +36,7 @@ if(!$mode) {
 if($mode == "all") {
 	print("\t\t<p class=\"info\">$n Happy Things are being shared. <a href=\"?mode=each\">How many people?</a></p>\n");
 
+	// pagination could be cleaner, it's weird because i was doing it very wrong before
 	for($i = 0; $i < $perPage;) {
 			if($cur < $n) {
 					$file = "images/$all[$cur]";
@@ -74,14 +75,16 @@ if($mode == "all") {
 		//print("<!-- $curIp ($curValue) -->\n");
 		next($ipCounts);
 
+		// depending on how long people stay interested, this might need pagination too
 		for($i = 0; $i < $allCount; $i++) {
 			$curImg = $all[$i];
 			if(strstr($curImg, $curIp)) {
-					print("\t\t<img src=\"images/$curImg\"");
+					$file = "images/$curImg";
+					print("\t\t<a href=\"$file\"><img src=\"$file\"");
 					if($width != 0) {
 							print(" width=\"$width\"");
 					}
-					print("/>\n");
+					print("/></a>\n");
 				break;
 			}
 		}
