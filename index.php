@@ -20,7 +20,7 @@ closedir($dir);
 rsort($all);
 
 $n = count($all);
-$cur = intval($_GET["page"]);
+$cur = intval($_GET["start"]);
 $width = intval($_GET["width"]);
 $perPage = intval($_GET["perpage"]);
 $mode = $_GET["mode"];
@@ -35,15 +35,14 @@ if(!$mode) {
 
 if($mode == "all") {
 	print("\t\t<p class=\"info\">$n Happy Things are being shared. <a href=\"?mode=each\">How many people?</a></p>\n");
-
+	
 	for($i = 0; $i < $perPage;) {
 			if($cur < $n) {
-					$file = "images/$all[$cur]";
-					print("\t\t<a href=\"$file\"><img src=\"$file\"");
+					print("\t\t<img src=\"images/$all[$cur]\"");
 					if($width != 0) {
 							print(" width=\"$width\"");
 					}
-					print("/></a>\n");
+					print("/>\n");
 					$i++;
 					$cur++;
 			} else {
@@ -52,12 +51,11 @@ if($mode == "all") {
 	}
 
 	if($cur < $n) {
-			$currentPage = intval(ceil($cur / $perPage));
-			$nextPage = intval(ceil($cur / $perPage) + 1);
+			$nextPage = intval(ceil($cur / $perPage));
 			$total = intval(ceil($n / $perPage));
-			print("\t\t<a href=\"?page=$nextPage\"><p>Click here for page $nextPage of $total</p></a>");
+			print("\t\t<a href=\"?start=$cur\"><p>Click here for page $nextPage of $total</p></a>");
 	}
-} else if($mode == "each") {
+} else if($mode == "each") {		
 	$allCount = count($all);
 	for($i = 0; $i < $allCount; $i++) {
 		$cur = $all[$i];
@@ -67,7 +65,7 @@ if($mode == "all") {
 
 	$ipCounts = array_count_values($ips);
 	$uniqueCount = count($ipCounts);
-
+	
 	print("\t\t<p class=\"info\">$uniqueCount people are sharing Happy Things. <a href=\"?mode=all\">How many things?</a></p>\n");
 
 	while ($curValue = current($ipCounts)) {
