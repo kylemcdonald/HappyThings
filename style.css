@@ -26,3 +26,6 @@ a:hover {
 .info {
 	font-size: 75%;
 }
+img {
+  max-width: 100%;
+}
