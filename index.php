@@ -72,7 +72,7 @@ if($mode == "all") {
 
 	while ($curValue = current($ipCounts)) {
 		$curIp = key($ipCounts);
-		//print("<!-- $curIp ($curValue) -->\n");
+		print("<!-- $curIp ($curValue total) -->\n");
 		next($ipCounts);
 
 		// depending on how long people stay interested, this might need pagination too

@@ -12,7 +12,12 @@
 				
 				$ip = $_SERVER['REMOTE_ADDR'];
 				
-				$blocked = array("76.11.71.252", "209.29.221.195", "77.248.108.44");
+				$blocked = array(
+					"76.11.71.252",
+					"209.29.221.195",
+					"77.248.108.44",
+					"66.195.220.2" // aleks davidovich
+				);
 
 				$logFilename = "log.txt";
 				$fh = fopen($logFilename, 'a');
@@ -27,9 +32,9 @@
 				}
 				
 				if($safe) {
-					//fwrite($fh, "$ip is safe\n");
+					//fwrite($fh, "$ip is not blocked\n");
 				} else {
-					//fwrite($fh, "$ip is not safe\n");
+					fwrite($fh, time().": $ip is blocked\n");
 				}
 				fclose($fh);
 				
