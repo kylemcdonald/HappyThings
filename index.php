@@ -53,7 +53,7 @@ if($mode == "all") {
 	}
 
 	if($cur < $n) {
-			$nextPage = intval(ceil($cur / $perPage));
+			$nextPage = 1 + intval(ceil($cur / $perPage));
 			$total = intval(ceil($n / $perPage));
 			print("\t\t<a href=\"?start=$cur\"><p>Click here for page $nextPage of $total</p></a>");
 	}
