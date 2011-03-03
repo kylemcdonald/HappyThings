@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="style.css" type="text/css"/>
 	</head>
 	<body>
-		<p><span class="happythings"><a href="http://kylemcdonald.net/happythings/">Happy Things</a></span> is a one hour <a href="http://fffff.at/speed-projects/">speed project</a> by <a href="http://theowatson.com/">Theo Watson</a> and <a href="http://kylemcdonald.net/">Kyle McDonald</a> that automatically posts a screenshot every time you smile. Download it <a href="HappyThings-001.zip">here</a> (OS X, 10 MB).</p>
+		<p><span class="happythings"><a href="http://kylemcdonald.net/happythings/">Happy Things</a></span> is a one hour <a href="http://fffff.at/speed-projects/">speed project</a> by <a href="http://theowatson.com/">Theo Watson</a> and <a href="http://kylemcdonald.net/">Kyle McDonald</a> that automatically posts a screenshot every time you smile. Download it <a href="HappyThings-002.zip">here</a> (OS X, 10 MB).</p>
 
 <?php
 $dir = opendir("images");
