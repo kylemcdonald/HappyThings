@@ -1,0 +1,4 @@
+AuthName "People Staring at Computers"
+AuthType Basic
+AuthUserFile /home/kylemcdonald/.htpasswd
+Require valid-user
